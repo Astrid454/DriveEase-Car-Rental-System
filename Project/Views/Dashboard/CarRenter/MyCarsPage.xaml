@@ -1,0 +1,99 @@
+<Page
+    x:Class="Project.Views.Dashboard.CarRenter.MyCarsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="20">
+
+            <!-- Header -->
+            <StackPanel>
+                <TextBlock Text="My Cars"
+                           FontSize="24"
+                           FontWeight="SemiBold"/>
+
+                <TextBlock Text="Manage your listed cars, pricing and availability."
+                           FontSize="14"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+            </StackPanel>
+
+            <!-- Stats -->
+            <Grid ColumnSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Total Cars" FontSize="14"/>
+                        <TextBlock x:Name="TotalCarsText"
+                                   Text="0"
+                                   FontSize="28"
+                                   FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Available" FontSize="14"/>
+                        <TextBlock x:Name="AvailableCarsText"
+                                   Text="0"
+                                   FontSize="28"
+                                   FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Currently Rented" FontSize="14"/>
+                        <TextBlock x:Name="RentedCarsText"
+                                   Text="0"
+                                   FontSize="28"
+                                   FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Cars Section -->
+            <Border Padding="20"
+                    CornerRadius="12"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+                <StackPanel Spacing="16">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Listed Cars"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"/>
+
+                        <Button Grid.Column="1"
+                                Content="+ Add Car"
+                                Style="{StaticResource AccentButtonStyle}"
+                                Click="AddCar_Click"/>
+                    </Grid>
+
+                    <StackPanel x:Name="CarsListPanel"
+                                Spacing="12"/>
+
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

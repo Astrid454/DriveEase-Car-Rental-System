@@ -1,0 +1,105 @@
+<Page
+    x:Class="Project.Views.Dashboard.Customer.PaymentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Padding="40">
+        <Border MaxWidth="760"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Padding="32"
+                CornerRadius="24"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+            <Grid ColumnSpacing="28">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.3*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Spacing="18">
+                    <TextBlock Text="Payment Summary"
+                               FontSize="26"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock x:Name="CarNameText"
+                               FontSize="18"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock x:Name="ReservationDatesText"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               TextWrapping="Wrap"/>
+
+                    <Border Padding="18"
+                            CornerRadius="16"
+                            Background="#111827">
+
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Total to pay"
+                                       Foreground="#A78BFA"/>
+
+                            <TextBlock x:Name="TotalAmountText"
+                                       FontSize="34"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Spacing="18">
+                    <TextBlock Text="Choose payment method"
+                               FontSize="22"
+                               FontWeight="SemiBold"/>
+
+                    <ComboBox x:Name="PaymentMethodBox"
+                              SelectionChanged="PaymentMethodBox_SelectionChanged"
+                              SelectedIndex="0"
+                              Width="260">
+                        <ComboBoxItem Content="Cash"/>
+                        <ComboBoxItem Content="Card"/>
+                    </ComboBox>
+
+                    <StackPanel x:Name="CardDetailsPanel"
+                                Spacing="12"
+                                Visibility="Collapsed">
+
+                        <TextBox x:Name="CardHolderBox"
+                                 Header="Card holder name"
+                                 PlaceholderText="Ana Ionescu"/>
+
+                        <TextBox x:Name="CardNumberBox"
+                                 Header="Card number"
+                                 PlaceholderText="1234 5678 9012 3456"
+                                 MaxLength="19"/>
+
+                        <TextBox x:Name="ExpiryDateBox"
+                                 Header="Expiry date"
+                                 PlaceholderText="12/28"
+                                 MaxLength="5"/>
+                    </StackPanel>
+
+                    <TextBlock x:Name="ErrorText"
+                               Foreground="Tomato"
+                               TextWrapping="Wrap"/>
+
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0"
+                                Content="Back"
+                                HorizontalAlignment="Stretch"
+                                Click="Back_Click"/>
+
+                        <Button Grid.Column="1"
+                                Content="Confirm payment"
+                                HorizontalAlignment="Stretch"
+                                Style="{StaticResource AccentButtonStyle}"
+                                Click="ConfirmPayment_Click"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

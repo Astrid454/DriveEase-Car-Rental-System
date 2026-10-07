@@ -1,0 +1,173 @@
+<Page
+    x:Class="Project.Views.Dashboard.CarRenter.AddCarPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="24" Padding="28">
+
+            <!-- Header -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="← Back"
+                        Click="Cancel_Click"
+                        Margin="0,0,16,0"/>
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock x:Name="PageTitleText"
+                               Text="Add New Car"
+                               FontSize="28"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock x:Name="PageSubtitleText"
+                               Text="Complete all vehicle details before listing it for rent."
+                               FontSize="14"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Main card -->
+            <Border Padding="26"
+                    CornerRadius="16"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+                <Grid ColumnSpacing="28">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left column -->
+                    <StackPanel Grid.Column="0" Spacing="16">
+
+                        <TextBlock Text="Vehicle Details"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBox x:Name="BrandBox"
+                                 Header="Brand"
+                                 PlaceholderText="BMW, Audi, Tesla"/>
+
+                        <TextBox x:Name="ModelBox"
+                                 Header="Model"
+                                 PlaceholderText="3 Series, A4, Model 3"/>
+
+                        <TextBox x:Name="YearBox"
+                                 Header="Year"
+                                 PlaceholderText="2021"/>
+
+                        <TextBox x:Name="PriceBox"
+                                 Header="Price per day"
+                                 PlaceholderText="65"/>
+
+                    </StackPanel>
+
+                    <!-- Right column -->
+                    <StackPanel Grid.Column="1" Spacing="16">
+
+                        <TextBlock Text="Registration &amp; Garage"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"/>
+
+                        <ComboBox x:Name="CountyBox"
+                                  Header="County"
+                                  PlaceholderText="Select county"
+                                  HorizontalAlignment="Stretch"/>
+
+                        <Grid ColumnSpacing="12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox x:Name="PlateDigitsBox"
+                                     Grid.Column="0"
+                                     Header="Plate digits"
+                                     PlaceholderText="10 or 123"/>
+
+                            <TextBox x:Name="PlateLettersBox"
+                                     Grid.Column="1"
+                                     Header="Plate letters"
+                                     PlaceholderText="ABC"/>
+                        </Grid>
+
+                        <Border Padding="14"
+                                CornerRadius="12"
+                                Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Plate Preview"
+                                           FontSize="12"
+                                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                                <TextBlock x:Name="PlatePreviewText"
+                                           Text="-"
+                                           FontSize="22"
+                                           FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ComboBox x:Name="GarageBox"
+                                  Header="Garage"
+                                  PlaceholderText="Select garage"
+                                  HorizontalAlignment="Stretch"/>
+
+                        <StackPanel Spacing="10">
+                            <Border Width="220"
+                                    Height="140"
+                                    CornerRadius="14"
+                                    Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}"
+                                    HorizontalAlignment="Left">
+                                <Image x:Name="CarImagePreview"
+                                       Stretch="UniformToFill"/>
+                            </Border>
+
+                            <Button Content="Select Car Image"
+                                    Click="SelectImage_Click"/>
+
+                            <TextBlock x:Name="ImageText"
+                                       Text="No image selected"
+                                       FontSize="13"
+                                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Bottom actions -->
+            <Border Padding="18"
+                    CornerRadius="14"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+                <Grid ColumnSpacing="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="ErrorText"
+                               Text=""
+                               Foreground="Red"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"/>
+
+                    <Button Grid.Column="1"
+                            Content="Cancel"
+                            Click="Cancel_Click"/>
+
+                    <Button Grid.Column="2"
+                            x:Name="SaveButton"
+                            Content="Add Car"
+                            Style="{StaticResource AccentButtonStyle}"
+                            Click="SaveCar_Click"/>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

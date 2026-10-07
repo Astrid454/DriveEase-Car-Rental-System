@@ -1,0 +1,135 @@
+<Page
+    x:Class="Project.Views.Auth.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Project.Views"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Width="620"
+            Padding="48"
+            CornerRadius="24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1">
+            <StackPanel Spacing="0">
+
+                <!-- Logo -->
+                <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,0,0,24">
+                    <Border Width="32" Height="32" CornerRadius="8" Background="#1A6EF5">
+                        <TextBlock Text="D" Foreground="White" FontWeight="SemiBold"
+                                   FontSize="16" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="DriveEase" FontSize="15" FontWeight="Medium"
+                               VerticalAlignment="Center"
+                               Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                </StackPanel>
+
+                <!-- Title -->
+                <TextBlock Text="Create account" FontSize="20" FontWeight="Medium"
+                           Foreground="{ThemeResource TextFillColorPrimaryBrush}"
+                           Margin="0,0,0,4"/>
+                <TextBlock Text="Start renting cars in minutes."
+                           FontSize="13" Margin="0,0,0,24"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                <!-- Name row -->
+                <Grid Margin="0,0,0,16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="FIRST NAME" FontSize="11" FontWeight="Medium"
+                                   CharacterSpacing="40" Margin="0,0,0,6"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                        <TextBox x:Name="TxtFirstName" PlaceholderText="Ion"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="LAST NAME" FontSize="11" FontWeight="Medium"
+                                   CharacterSpacing="40" Margin="0,0,0,6"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                        <TextBox x:Name="TxtLastName" PlaceholderText="Popescu"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Email -->
+                <TextBlock Text="EMAIL" FontSize="11" FontWeight="Medium"
+                           CharacterSpacing="40" Margin="0,0,0,6"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBox x:Name="TxtEmail" PlaceholderText="you@email.com"
+                         Margin="0,0,0,16"/>
+
+                <!-- Phone -->
+                <TextBlock Text="PHONE" FontSize="11" FontWeight="Medium"
+                           CharacterSpacing="40" Margin="0,0,0,6"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBox x:Name="TxtPhone" PlaceholderText="+40 7xx xxx xxx"
+                         Margin="0,0,0,16"/>
+
+                <TextBlock Text="ROLE"
+                       FontSize="11"
+                       FontWeight="Medium"
+                       CharacterSpacing="40"
+                       Margin="0,0,0,6"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                <ComboBox x:Name="RoleComboBox"
+                      SelectedIndex="0"
+                      Margin="0,0,0,16">
+
+                    <ComboBoxItem Content="Customer"/>
+                    <ComboBoxItem Content="CarRenter"/>
+                </ComboBox>
+
+                <!-- Password -->
+                <TextBlock Text="PASSWORD" FontSize="11" FontWeight="Medium"
+                           CharacterSpacing="40" Margin="0,0,0,6"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                   <PasswordBox x:Name="TxtPassword"
+                             PlaceholderText="Min. 8 characters"
+                             Margin="0,0,0,6"/>
+
+                   <TextBlock Text="Must contain at least 8 characters, one uppercase letter and one number."
+                           FontSize="12"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           Margin="0,0,0,16"
+                           TextWrapping="Wrap"/>
+
+                    <TextBlock Text="CONFIRM PASSWORD" FontSize="11" FontWeight="Medium"
+                           CharacterSpacing="40" Margin="0,0,0,6"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                      <PasswordBox x:Name="TxtConfirmPassword"
+                             PlaceholderText="Repeat password"
+                             Margin="0,0,0,24"/>
+
+                <!-- Error -->
+                <TextBlock x:Name="TxtError" Text="" Foreground="#E24B4A"
+                           FontSize="12" Margin="0,0,0,12"
+                           Visibility="Collapsed" TextWrapping="Wrap"/>
+
+                <!-- Submit -->
+                <Button Content="Create account" HorizontalAlignment="Stretch"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Click="SignUp_Click"/>
+
+                <!-- Sign in link -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                            Margin="0,16,0,0" Spacing="4">
+                    <TextBlock Text="Already have an account?" FontSize="13"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               VerticalAlignment="Center"/>
+                    <HyperlinkButton Content="Sign in" FontSize="13"
+                                     Padding="0" Click="GoToSignIn_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

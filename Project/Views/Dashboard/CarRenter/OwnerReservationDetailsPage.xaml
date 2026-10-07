@@ -1,0 +1,186 @@
+<Page
+    x:Class="Project.Views.Dashboard.CarRenter.OwnerReservationDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer>
+        <Grid Padding="32">
+            <Border Width="980"
+                    HorizontalAlignment="Center"
+                    Padding="32"
+                    CornerRadius="28"
+                    Background="#26263A"
+                    BorderBrush="#3B3B5C"
+                    BorderThickness="1">
+
+                <StackPanel Spacing="20">
+
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <Button Content="← Back"
+                                Width="100"
+                                Click="Back_Click"/>
+
+                        <Border x:Name="StatusBadge"
+                                CornerRadius="12"
+                                Padding="12,6"
+                                Background="#8B5CF6">
+                            <TextBlock x:Name="StatusText"
+                                       Foreground="White"
+                                       FontWeight="SemiBold"/>
+                        </Border>
+                    </StackPanel>
+
+                    <TextBlock Text="Rental request details"
+                               Foreground="White"
+                               FontSize="34"
+                               FontWeight="SemiBold"/>
+
+                    <Grid ColumnSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0"
+                                Padding="22"
+                                CornerRadius="18"
+                                Background="#111827">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Customer information"
+                                           Foreground="#A78BFA"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="CustomerNameText" Foreground="White"/>
+                                <TextBlock x:Name="CustomerEmailText" Foreground="#D1D5DB"/>
+                                <TextBlock x:Name="CustomerPhoneText" Foreground="#D1D5DB"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                Padding="22"
+                                CornerRadius="18"
+                                Background="#111827">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Vehicle information"
+                                           Foreground="#60A5FA"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="VehicleNameText" Foreground="White"/>
+                                <TextBlock x:Name="PlateText" Foreground="#D1D5DB"/>
+                                <TextBlock x:Name="PriceText" Foreground="#D1D5DB"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Grid ColumnSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0"
+                                Padding="22"
+                                CornerRadius="18"
+                                Background="#1E293B"
+                                BorderBrush="#334155"
+                                BorderThickness="1">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Rental period"
+                                           Foreground="#A78BFA"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="PickupText" Foreground="White"/>
+                                <TextBlock x:Name="ReturnText" Foreground="#D1D5DB"/>
+                                <TextBlock x:Name="PickupLocationText" Foreground="#D1D5DB"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                Padding="22"
+                                CornerRadius="18"
+                                Background="#1E293B"
+                                BorderBrush="#334155"
+                                BorderThickness="1">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Payment"
+                                           Foreground="#A78BFA"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="PaymentMethodText" Foreground="White"/>
+                                <TextBlock x:Name="PaymentStatusText" Foreground="#D1D5DB"/>
+                                <TextBlock x:Name="LateFeeText" Foreground="#F59E0B" FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Border Padding="22"
+                            CornerRadius="18"
+                            Background="#111827"
+                            BorderBrush="#3B3B5C"
+                            BorderThickness="1">
+                        <StackPanel Spacing="10">
+                            <TextBlock Text="Rental progress"
+                                       Foreground="#A78BFA"
+                                       FontWeight="SemiBold"/>
+
+                            <TextBlock x:Name="ProgressText"
+                                       Foreground="White"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0"
+                                Padding="18"
+                                CornerRadius="18"
+                                Background="#1E293B">
+                            <StackPanel>
+                                <TextBlock Text="Total paid"
+                                           Foreground="#9CA3AF"/>
+                                <TextBlock x:Name="TotalText"
+                                           Foreground="White"
+                                           FontSize="24"
+                                           FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                Padding="18"
+                                CornerRadius="18"
+                                Background="#1E293B">
+                            <StackPanel>
+                                <TextBlock Text="DriveEase fee"
+                                           Foreground="#9CA3AF"/>
+                                <TextBlock x:Name="FeeText"
+                                           Foreground="White"
+                                           FontSize="24"
+                                           FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2"
+                                Padding="18"
+                                CornerRadius="18"
+                                Background="#1E293B">
+                            <StackPanel>
+                                <TextBlock Text="Owner net"
+                                           Foreground="#9CA3AF"/>
+                                <TextBlock x:Name="OwnerNetText"
+                                           Foreground="White"
+                                           FontSize="24"
+                                           FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>

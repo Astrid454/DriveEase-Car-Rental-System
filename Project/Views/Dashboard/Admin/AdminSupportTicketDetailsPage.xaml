@@ -1,0 +1,96 @@
+<Page
+    x:Class="Project.Views.Dashboard.Admin.AdminSupportTicketDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+
+    <ScrollViewer>
+        <Grid Padding="40">
+            <Border MaxWidth="980"
+                    HorizontalAlignment="Center"
+                    Padding="32"
+                    CornerRadius="24"
+                    Background="#26263A"
+                    BorderBrush="#3B3B5C"
+                    BorderThickness="1">
+
+                <StackPanel Spacing="18">
+
+                    <Button Content="← Back"
+                            Width="110"
+                            Click="Back_Click"/>
+
+                    <TextBlock Text="Ticket Details"
+                               Foreground="White"
+                               FontSize="34"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock x:Name="SubjectText"
+                               Foreground="White"
+                               FontSize="24"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock x:Name="CategoryText"
+                               Foreground="#A78BFA"
+                               FontSize="15"/>
+
+                    <TextBlock x:Name="StatusText"
+                               Foreground="#FBBF24"
+                               FontSize="15"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock x:Name="CreatedAtText"
+                               Foreground="#9CA3AF"
+                               FontSize="13"/>
+
+                    <Border Padding="18"
+                            CornerRadius="16"
+                            Background="#111827"
+                            BorderBrush="#334155"
+                            BorderThickness="1">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="Customer message"
+                                       Foreground="#A78BFA"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"/>
+
+                            <TextBlock x:Name="MessageText"
+                                       Foreground="White"
+                                       FontSize="15"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBox x:Name="AdminResponseBox"
+                             Header="Admin response"
+                             PlaceholderText="Write a clear response for the customer..."
+                             AcceptsReturn="True"
+                             TextWrapping="Wrap"
+                             Height="180"/>
+
+                    <StackPanel Orientation="Horizontal"
+                                Spacing="12">
+
+                        <Button x:Name="MarkInProgressButton"
+                                Content="Mark in progress"
+                                Width="150"
+                                Click="MarkInProgress_Click"/>
+
+                        <Button x:Name="SendResponseButton"
+                                Content="Send response &amp; resolve"
+                                Width="220"
+                                Background="#22C55E"
+                                Foreground="White"
+                                Click="SendResponse_Click"/>
+                    </StackPanel>
+
+                    <TextBlock x:Name="ActionStatusText"
+                               Foreground="#34D399"
+                               FontSize="13"
+                               TextWrapping="Wrap"/>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>

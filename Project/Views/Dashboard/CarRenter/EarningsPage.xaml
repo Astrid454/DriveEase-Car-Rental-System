@@ -1,0 +1,222 @@
+<Page
+    x:Class="Project.Views.Dashboard.CarRenter.EarningsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="20">
+
+            <!-- Header -->
+            <StackPanel>
+                <TextBlock Text="Earnings"
+                           FontSize="24"
+                           FontWeight="SemiBold"/>
+
+                <TextBlock Text="Track your rental income, payouts and vehicle performance."
+                           FontSize="14"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+            </StackPanel>
+
+            <!-- Stats -->
+            <Grid ColumnSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Total Earnings" FontSize="14"/>
+                        <TextBlock x:Name="TotalEarningsText" Text="$0.00" FontSize="28" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="This Month" FontSize="14"/>
+                        <TextBlock x:Name="MonthlyEarningsText" Text="$0.00" FontSize="28" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Completed Rentals" FontSize="14"/>
+                        <TextBlock x:Name="CompletedRentalsText" Text="0" FontSize="28" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="3"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel>
+                        <TextBlock Text="Pending Payout" FontSize="14"/>
+                        <TextBlock x:Name="PendingPayoutText" Text="$0.00" FontSize="28" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Main Content -->
+            <Grid ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Recent Transactions -->
+                <Border Grid.Column="0"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+                    <StackPanel Spacing="16">
+
+                        <TextBlock Text="Recent Transactions"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"/>  
+
+                        <StackPanel x:Name="RecentTransactionsPanel"
+                                    Spacing="16"/>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- Top Vehicle -->
+                <Border Grid.Column="1"
+                        Padding="20"
+                        CornerRadius="12"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+                    <StackPanel Spacing="14">
+                        <TextBlock Text="Top Earning Car"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"/>
+
+                        <Border Width="72"
+                                Height="72"
+                                CornerRadius="12"
+                                Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}">
+                            <FontIcon Glyph="&#xE804;"
+                                      FontSize="30"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+
+                        <TextBlock x:Name="TopCarNameText" Text="No earnings yet"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBlock x:Name="TopCarDetailsText"
+                                   Text="You don't have completed rentals yet."
+                                   TextWrapping="Wrap"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                        <Border Padding="12"
+                                CornerRadius="10"
+                                Background="#221A6EF5">
+                            <TextBlock Text="Best performing vehicle"
+                                       Foreground="#FF6EA8FE"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Monthly Breakdown -->
+            <Border Padding="20"
+                    CornerRadius="12"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+                <StackPanel Spacing="16">
+                    <TextBlock Text="Monthly Breakdown"
+                               FontSize="18"
+                               FontWeight="SemiBold"/>
+
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0"
+            Padding="16"
+            CornerRadius="10"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1">
+
+                            <StackPanel>
+                                <TextBlock x:Name="Month1NameText"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                                <TextBlock x:Name="Month1RevenueText"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1"
+            Padding="16"
+            CornerRadius="10"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1">
+
+                            <StackPanel>
+                                <TextBlock x:Name="Month2NameText"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                                <TextBlock x:Name="Month2RevenueText"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2"
+            Padding="16"
+            CornerRadius="10"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1">
+
+                            <StackPanel>
+                                <TextBlock x:Name="Month3NameText"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                                <TextBlock x:Name="Month3RevenueText"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="3"
+            Padding="16"
+            CornerRadius="10"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1">
+
+                            <StackPanel>
+                                <TextBlock x:Name="Month4NameText"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+
+                                <TextBlock x:Name="Month4RevenueText"
+                       FontSize="22"
+                       FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

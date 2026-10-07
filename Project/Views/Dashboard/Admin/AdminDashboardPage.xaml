@@ -1,0 +1,268 @@
+<Page
+    x:Class="Project.Views.Dashboard.Admin.AdminDashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="Transparent">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Grid Grid.Column="0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#0F172A" Offset="0"/>
+                    <GradientStop Color="#172554" Offset="0.55"/>
+                    <GradientStop Color="#312E81" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Brand -->
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        Padding="20,32,20,24">
+
+                <Border Width="32"
+                        Height="32"
+                        CornerRadius="8"
+                        Background="#8B5CF6">
+
+                    <TextBlock Text="D"
+                               Foreground="White"
+                               FontWeight="SemiBold"
+                               FontSize="16"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+
+                <TextBlock Text="DriveEase Admin"
+                           Foreground="White"
+                           FontSize="15"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Nav Items -->
+            <StackPanel Grid.Row="1"
+                        Spacing="2"
+                        Padding="10,0">
+
+                <TextBlock Text="ADMIN"
+                           Foreground="#66FFFFFF"
+                           FontSize="10"
+                           FontWeight="SemiBold"
+                           Margin="10,0,0,6"
+                           CharacterSpacing="80"/>
+
+                <Button x:Name="BtnOverview"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="Overview"
+                        Click="NavButton_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon Glyph="&#xE80F;" FontSize="14" Foreground="#CCFFFFFF"/>
+                        <TextBlock Text="Overview" Foreground="#CCFFFFFF" FontSize="13"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnReturnedReservations"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="ReturnedReservations"
+                        Click="NavButton_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon Glyph="&#xE8AB;" FontSize="14" Foreground="#CCFFFFFF"/>
+                        <TextBlock Text="Returned Cars" Foreground="#CCFFFFFF" FontSize="13"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnCompanyRevenue"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="CompanyRevenue"
+                        Click="NavButton_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon Glyph="&#xE8C7;" FontSize="14" Foreground="#CCFFFFFF"/>
+                        <TextBlock Text="Company Revenue" Foreground="#CCFFFFFF" FontSize="13"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnSupportTickets"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="SupportTickets"
+                        Click="NavButton_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon Glyph="&#xE90F;" FontSize="14" Foreground="#CCFFFFFF"/>
+                        <TextBlock Text="Support Tickets" Foreground="#CCFFFFFF" FontSize="13"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnNotifications"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="Notifications"
+                        Click="NavButton_Click">
+
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <FontIcon Glyph="&#xE7F4;" FontSize="14" Foreground="#CCFFFFFF"/>
+                            <TextBlock Text="Notifications" Foreground="#CCFFFFFF" FontSize="13"/>
+                        </StackPanel>
+
+                        <Border x:Name="NotificationsBadge"
+                                Width="18"
+                                Height="18"
+                                CornerRadius="9"
+                                Background="#FF3B30"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Margin="4,-6,0,0"
+                                Visibility="Collapsed">
+
+                            <TextBlock x:Name="NotificationsBadgeText"
+                                       Text="0"
+                                       FontSize="10"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Button>
+
+                <TextBlock Text="MANAGEMENT"
+                           Foreground="#66FFFFFF"
+                           FontSize="10"
+                           FontWeight="SemiBold"
+                           Margin="10,16,0,6"
+                           CharacterSpacing="80"/>
+
+                <Button x:Name="BtnUsers"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="Users"
+                        Click="NavButton_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon Glyph="&#xE716;" FontSize="14" Foreground="#CCFFFFFF"/>
+                        <TextBlock Text="Users" Foreground="#CCFFFFFF" FontSize="13"/>
+                    </StackPanel>
+                </Button>
+                
+                <Button x:Name="BtnGarages"
+                        Style="{StaticResource NavButtonStyle}"
+                        Tag="Garages"
+                        Click="NavButton_Click">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <FontIcon Glyph="&#xE707;" FontSize="14" Foreground="#CCFFFFFF"/>
+                        <TextBlock Text="Garages" Foreground="#CCFFFFFF" FontSize="13"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+            <!-- User Footer -->
+            <Border Grid.Row="2"
+                    Background="#111827"
+                    BorderBrush="#334155"
+                    BorderThickness="0,1,0,0"
+                    Padding="16,14">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            Width="32"
+                            Height="32"
+                            CornerRadius="16"
+                            Background="#8B5CF6">
+
+                        <TextBlock x:Name="AvatarInitials"
+                                   Text="AD"
+                                   Foreground="White"
+                                   FontSize="11"
+                                   FontWeight="Medium"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10,0,0,0"
+                                VerticalAlignment="Center">
+
+                        <TextBlock x:Name="SidebarUserName"
+                                   Text="Admin"
+                                   Foreground="White"
+                                   FontSize="12"
+                                   FontWeight="Medium"/>
+
+                        <TextBlock Text="Admin"
+                                   Foreground="#A78BFA"
+                                   FontSize="11"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="2"
+                            Style="{StaticResource NavButtonStyle}"
+                            ToolTipService.ToolTip="Sign out"
+                            Click="SignOut_Click"
+                            Padding="6">
+
+                        <FontIcon Glyph="&#xF3B1;"
+                                  FontSize="14"
+                                  Foreground="#C4B5FD"/>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Content Area -->
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#181825" Offset="0"/>
+                    <GradientStop Color="#221B2E" Offset="0.45"/>
+                    <GradientStop Color="#10243F" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top bar -->
+            <Border Grid.Row="0"
+                    Background="#141827"
+                    BorderBrush="#3B3B5C"
+                    BorderThickness="0,0,0,1"
+                    Padding="24,48,24,16">
+
+                <StackPanel>
+                    <TextBlock x:Name="PageTitle"
+                               Text="Admin Overview"
+                               FontSize="17"
+                               FontWeight="Medium"
+                               Foreground="White"/>
+
+                    <TextBlock x:Name="PageSubtitle"
+                               Text=""
+                               FontSize="12"
+                               Foreground="#A78BFA"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Page Frame -->
+            <Frame Grid.Row="1"
+                   x:Name="ContentFrame"
+                   Padding="24"/>
+        </Grid>
+    </Grid>
+</Page>

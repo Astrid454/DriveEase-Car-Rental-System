@@ -1,0 +1,229 @@
+<Page
+    x:Class="Project.Views.Dashboard.ProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Padding="32">
+            <StackPanel Spacing="22">
+
+                <!-- User Info Card -->
+                <Border Padding="28"
+                        CornerRadius="24"
+                        Background="#1E293B"
+                        BorderBrush="#334155"
+                        BorderThickness="1">
+
+                    <Grid ColumnSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Width="82"
+                                Height="82"
+                                CornerRadius="41"
+                                Background="#8B5CF6">
+
+                            <TextBlock x:Name="AvatarInitialsText"
+                                       Text="U"
+                                       Foreground="White"
+                                       FontSize="26"
+                                       FontWeight="SemiBold"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Border>
+
+                        <StackPanel Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Spacing="6">
+
+                            <TextBlock x:Name="FullNameText"
+                                       Text="User Name"
+                                       Foreground="White"
+                                       FontSize="30"
+                                       FontWeight="SemiBold"/>
+
+                            <TextBlock x:Name="RoleText"
+                                       Text="Customer Account"
+                                       Foreground="#A78BFA"
+                                       FontSize="15"/>
+
+                            <TextBlock x:Name="EmailText"
+                                       Text="email@example.com"
+                                       Foreground="#CBD5E1"
+                                       FontSize="14"/>
+
+                            <TextBlock Text="Member of DriveEase"
+                                       Foreground="#94A3B8"
+                                       FontSize="13"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Grid ColumnSpacing="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Personal Information -->
+                    <Border Grid.Column="0"
+                            Padding="24"
+                            CornerRadius="20"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            BorderBrush="#3B3B5C"
+                            BorderThickness="1">
+
+                        <StackPanel Spacing="16">
+                            <TextBlock Text="Personal Information"
+                                       Foreground="White"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+
+                            <StackPanel Spacing="14">
+
+                                <TextBox x:Name="FirstNameBox"
+                                         Header="First name"/>
+
+                                <TextBox x:Name="LastNameBox"
+                                         Header="Last name"/>
+
+                                <TextBox x:Name="EmailBox"
+                                         Header="Email"/>
+
+                                <TextBox x:Name="PhoneBox"
+                                         Header="Phone number"
+                                         PlaceholderText="Optional"/>
+
+                            </StackPanel>
+
+                            <TextBlock x:Name="ProfileStatusText"
+                                       Foreground="#34D399"
+                                       TextWrapping="Wrap"/>
+
+                            <Button Content="Save changes"
+                                    Style="{StaticResource AccentButtonStyle}"
+                                    HorizontalAlignment="Left"
+                                    Click="SaveProfile_Click"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Security -->
+                    <Border Grid.Column="1"
+                            Padding="24"
+                            CornerRadius="20"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            BorderBrush="#3B3B5C"
+                            BorderThickness="1">
+
+                        <StackPanel Spacing="16">
+                            <TextBlock Text="Security"
+                                       Foreground="White"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+
+                            <PasswordBox x:Name="CurrentPasswordBox"
+                                         Header="Current password"/>
+
+                            <PasswordBox x:Name="NewPasswordBox"
+                                         Header="New password"/>
+
+                            <PasswordBox x:Name="ConfirmPasswordBox"
+                                         Header="Confirm new password"/>
+
+                            <TextBlock x:Name="PasswordStatusText"
+                                       Foreground="#F87171"
+                                       TextWrapping="Wrap"/>
+
+                            <Button Content="Change password"
+                                    HorizontalAlignment="Left"
+                                    Click="ChangePassword_Click"/>
+
+                            <TextBlock Text="Last login: Current session"
+                                       Foreground="#94A3B8"
+                                       FontSize="13"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <Grid ColumnSpacing="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Notifications -->
+                    <Border Grid.Column="0"
+                            Padding="24"
+                            CornerRadius="20"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            BorderBrush="#3B3B5C"
+                            BorderThickness="1">
+
+                        <StackPanel Spacing="18">
+                            <TextBlock Text="Notifications"
+                                       Foreground="White"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+
+                            <ToggleSwitch x:Name="EmailNotificationsSwitch"
+                                          Header="Email notifications"
+                                          IsOn="True"/>
+
+                            <ToggleSwitch x:Name="ReservationRemindersSwitch"
+                                          Header="Reservation reminders"
+                                          IsOn="True"/>
+
+                            <TextBlock Text="You will receive updates about reservations, pickup details and support tickets."
+                                       Foreground="#94A3B8"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Driving License -->
+                    <Border Grid.Column="1"
+                            Padding="24"
+                            CornerRadius="20"
+                            Background="#1E293B"
+                            BorderBrush="#334155"
+                            BorderThickness="1">
+
+                        <StackPanel Spacing="16">
+                            <TextBlock Text="Driving License"
+                                       Foreground="White"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+
+                            <Border Padding="12"
+                                    CornerRadius="12"
+                                    Background="#2234C759">
+
+                                <TextBlock Text="License verified"
+                                           Foreground="#FF34C759"
+                                           FontWeight="SemiBold"/>
+                            </Border>
+
+                            <TextBox x:Name="LicenseNumberBox"
+                                     Header="License number"
+                                     PlaceholderText="RO-123456"/>
+
+                            <TextBox x:Name="LicenseExpiryBox"
+                                     Header="Expiry date"
+                                     PlaceholderText="12/2029"/>
+
+                            <TextBlock x:Name="LicenseStatusText"
+                                       Foreground="#34D399"
+                                       TextWrapping="Wrap"/>
+
+                            <Button Content="Update license"
+                                    HorizontalAlignment="Left"
+                                    Click="UpdateLicense_Click"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

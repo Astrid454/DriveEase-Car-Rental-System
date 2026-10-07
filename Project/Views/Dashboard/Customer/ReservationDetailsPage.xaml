@@ -1,0 +1,232 @@
+<Page
+    x:Class="Project.Views.Dashboard.Customer.ReservationDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer>
+        <Grid Padding="32">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#181825" Offset="0"/>
+                    <GradientStop Color="#221B2E" Offset="0.45"/>
+                    <GradientStop Color="#10243F" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Border Padding="32"
+            CornerRadius="28"
+            Background="#26263A"
+            BorderBrush="#3B3B5C"
+            BorderThickness="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="980"
+            Margin="0,40,0,40">
+
+                <Grid ColumnSpacing="32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="380"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                        CornerRadius="24"
+                        Background="#1A2238"
+                        Padding="22">
+
+                        <StackPanel Spacing="18">
+                            <Image x:Name="CarImage"
+                               Height="230"
+                               Stretch="Uniform"/>
+
+                            <TextBlock x:Name="CarNameText"
+                                   Foreground="White"
+                                   FontSize="30"
+                                   FontWeight="SemiBold"/>
+
+                            <TextBlock x:Name="CarPlateText"
+                                   Foreground="#A78BFA"
+                                   FontSize="15"/>
+
+                            <TextBlock x:Name="CarPriceText"
+                                   Foreground="#D1D5DB"
+                                   FontSize="15"/>
+                        </StackPanel>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Spacing="18">
+
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <Button Content="← Back"
+                                Width="100"
+                                Click="Back_Click"/>
+
+                            <Border x:Name="StatusBadge"
+                                CornerRadius="12"
+                                Padding="12,6"
+                                Background="#8B5CF6">
+                                <TextBlock x:Name="StatusText"
+                                       Foreground="White"
+                                       FontSize="13"
+                                       FontWeight="SemiBold"/>
+                            </Border>
+                        </StackPanel>
+
+                        <TextBlock Text="Reservation details"
+                               Foreground="White"
+                               FontSize="34"
+                               FontWeight="SemiBold"/>
+
+                        <TextBlock x:Name="ReservationIdText"
+                               Foreground="#9CA3AF"
+                               FontSize="13"/>
+
+                        <Border Padding="20"
+                            CornerRadius="18"
+                            Background="#111827"
+                            BorderBrush="#3B3B5C"
+                            BorderThickness="1">
+                            <StackPanel Spacing="12">
+
+                                <TextBlock Text="Pick-up"
+                                       Foreground="#A78BFA"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="PickupLocationText"
+                                       Foreground="White"
+                                       FontSize="18"/>
+
+                                <TextBlock x:Name="PickupDateText"
+                                       Foreground="#D1D5DB"
+                                       FontSize="15"/>
+
+                            </StackPanel>
+                        </Border>
+
+                        <Border Padding="20"
+                            CornerRadius="18"
+                            Background="#111827"
+                            BorderBrush="#3B3B5C"
+                            BorderThickness="1">
+                            <StackPanel Spacing="12">
+
+                                <TextBlock Text="Return"
+                                       Foreground="#60A5FA"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="ReturnDateText"
+                                       Foreground="#D1D5DB"
+                                       FontSize="15"/>
+
+                                <TextBlock Text="Please return the car at least 15 minutes before this time."
+                                       Foreground="#FBBF24"
+                                       FontSize="13"
+                                       TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Grid ColumnSpacing="14">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="0"
+                                Padding="18"
+                                CornerRadius="18"
+                                Background="#1E293B">
+                                <StackPanel>
+                                    <TextBlock Text="Duration"
+                                           Foreground="#9CA3AF"/>
+                                    <TextBlock x:Name="DurationText"
+                                           Foreground="White"
+                                           FontSize="24"
+                                           FontWeight="SemiBold"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                Padding="18"
+                                CornerRadius="18"
+                                Background="#1E293B">
+                                <StackPanel>
+                                    <TextBlock Text="Total price"
+                                           Foreground="#9CA3AF"/>
+                                    <TextBlock x:Name="TotalPriceText"
+                                           Foreground="White"
+                                           FontSize="24"
+                                           FontWeight="SemiBold"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                        <Border Padding="20"
+                                CornerRadius="18"
+                                Background="#111827"
+                                BorderBrush="#3B3B5C"
+                                BorderThickness="1">
+
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Payment"
+                                           Foreground="#A78BFA"
+                                           FontSize="15"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="PaymentMethodText"
+                                           Foreground="White"
+                                           FontSize="18"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="PaymentStatusText"
+                                           Foreground="#D1D5DB"
+                                           FontSize="14"
+                                           TextWrapping="Wrap"/>
+                                <TextBlock x:Name="LateFeeText"
+                                           Foreground="#F59E0B"
+                                           FontSize="14"
+                                           FontWeight="SemiBold"
+                                           Visibility="Collapsed"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Padding="20"
+                        CornerRadius="18"
+                        Background="#1E293B"
+                        BorderBrush="#334155"
+                        BorderThickness="1">
+
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Rental progress"
+                                           Foreground="#A78BFA"
+                                           FontSize="15"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="RentalProgressText"
+                                           Foreground="White"
+                                           FontSize="16"
+                                           TextWrapping="Wrap"/>
+
+                                <Button x:Name="ProgressActionButton"
+                                        Height="44"
+                                        HorizontalAlignment="Stretch"
+                                        Background="#8B5CF6"
+                                        Foreground="White"
+                                        Click="ProgressAction_Click"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Button x:Name="CancelButton"
+                            Content="Cancel reservation"
+                            Height="46"
+                            Background="#DC2626"
+                            Foreground="White"
+                            Click="CancelReservation_Click"/>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>

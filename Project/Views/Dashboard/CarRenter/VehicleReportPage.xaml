@@ -1,0 +1,114 @@
+<Page
+    x:Class="Project.Views.Dashboard.CarRenter.VehicleReportPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ScrollViewer>
+        <Grid Padding="32">
+            <StackPanel Spacing="22">
+
+                <Button Content="← Back"
+                        Width="100"
+                        Click="Back_Click"/>
+
+                <TextBlock Text="Vehicle Report"
+                           FontSize="32"
+                           FontWeight="SemiBold"/>
+
+                <Border Padding="24"
+                        CornerRadius="18"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <Grid ColumnSpacing="24">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="260"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="CarImage"
+                               Height="180"
+                               Stretch="Uniform"/>
+
+                        <StackPanel Grid.Column="1" Spacing="10">
+                            <TextBlock x:Name="CarNameText"
+                                       FontSize="28"
+                                       FontWeight="SemiBold"/>
+
+                            <TextBlock x:Name="PlateText"/>
+                            <TextBlock x:Name="YearText"/>
+                            <TextBlock x:Name="StatusText"/>
+                            <TextBlock x:Name="LocationText"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Grid ColumnSpacing="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Padding="20" CornerRadius="14"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                        <StackPanel>
+                            <TextBlock Text="Current vehicle state"/>
+                            <TextBlock x:Name="OperationalStatusText"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1" Padding="20" CornerRadius="14"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                        <StackPanel>
+                            <TextBlock Text="Maintenance status"/>
+                            <TextBlock x:Name="MaintenanceStatusText"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="2" Padding="20" CornerRadius="14"
+                            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                        <StackPanel>
+                            <TextBlock Text="Rental Availability"/>
+                            <TextBlock x:Name="AvailabilityText"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <Border Padding="24"
+                        CornerRadius="18"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="Maintenance details"
+                                   FontSize="22"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBlock x:Name="MaintenanceReasonText"/>
+                        <TextBlock x:Name="MaintenanceNotesText"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock x:Name="MaintenanceCreatedText"/>
+                        <TextBlock x:Name="MaintenanceEstimatedText"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Padding="24"
+                        CornerRadius="18"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="Owner guidance"
+                                   FontSize="22"
+                                   FontWeight="SemiBold"/>
+
+                        <TextBlock x:Name="GuidanceText"
+                                   TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
